@@ -81,8 +81,23 @@
     "egulias/email-validator": {
         "version": "2.1.18"
     },
+    "gufy/pdftohtml-php": {
+        "version": "v2.0.8"
+    },
+    "illuminate/config": {
+        "version": "v5.8.36"
+    },
+    "illuminate/contracts": {
+        "version": "v5.8.36"
+    },
+    "illuminate/support": {
+        "version": "v5.8.36"
+    },
     "monolog/monolog": {
         "version": "2.1.0"
+    },
+    "nesbot/carbon": {
+        "version": "2.35.0"
     },
     "nikic/php-parser": {
         "version": "v4.5.0"
@@ -93,8 +108,14 @@
     "ocramius/proxy-manager": {
         "version": "2.2.3"
     },
+    "paquettg/php-html-parser": {
+        "version": "1.7.0"
+    },
+    "paquettg/string-encode": {
+        "version": "0.1.1"
+    },
     "php": {
-        "version": "7.3"
+        "version": "7.4"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.1.0"
@@ -119,6 +140,9 @@
     },
     "psr/log": {
         "version": "1.1.3"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.1"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
