@@ -13,20 +13,25 @@
     {% if articles %}
         <table class="table table-striped">
             <thead><tr>
-                <th>    article title</th>
+                <th> article title</th>
                 <th>actions</th>
             </tr></thead>
             <tbody>
             {% for article in articles %}
                 <tr>
-                    <td>{{ article }}</td>
+                    <td>{{ article.title }}</td>
+
                     <td>
-                        <a href="/article/1" class="btn btn-dark">Read</a>
+                        <a href="/article/{{ article.id }}" class="btn btn-dark">Read</a>
                     </td>
                 </tr>
+
             {% endfor %}
             </tbody>
         </table>
+        {% for bodyText in bodyText %}
+         {{ bodyText }}
+        {% endfor %}
     {% else %}
         
         
