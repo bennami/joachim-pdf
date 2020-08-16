@@ -10,5 +10,14 @@
         <property name="serverTimezone" value="CET" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="imane@localhost" uuid="6b7cbe15-cbda-4ff1-a512-806fb735b55f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/joachim</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

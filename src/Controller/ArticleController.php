@@ -30,13 +30,13 @@
 
                     //get title of article
                     $crawler2 = new Crawler($htmlContent);
-                    $crawler2 = $crawler2->filter('head > title')->text();
+                    $crawler2 = $crawler2->filter('h2')->text();
                     var_dump($crawler2);
 
 
 
                     //save to db
-                    //$this->save($crawler2,$htmlforDB);
+                   //$this->save($crawler2,$htmlContent);
 
                 }
             }
@@ -46,11 +46,13 @@
             $articles= $product->findAll();
 
             //convert back to html tags before displaying
+            $body =[];
             foreach ($articles as $article){
-                $body =[];
-              array_push($body, html_entity_decode($article->getBody())) ;
+
+              array_push($body, $article->getBody()) ;
             }
-            return $this->render('articles/index.html.twig', array('articles' =>$articles, 'bodyText'=> $body));
+            var_dump($body);
+            return $this->render('articles/index.html.twig', array('articles' =>$articles, 'bodyTexts'=> $body));
         }
 
         /**
@@ -77,5 +79,9 @@
         /**
          * @Route (path="/article/id", methods={"GET"})
          */
+        public function show($id){
+            $article = $this->getDoctrine()->getRepository(Articles::class)->find($id);
+            return $this->render('articles/show.html.twig',array('article'=>$article));
+        }
 
     }
