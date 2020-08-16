@@ -22,23 +22,23 @@
                     <td>{{ article.title }}</td>
 
                     <td>
-                        <a href="/article/{{ article.id }}" class="btn btn-dark">Read</a>
+                        <a href="/article/{{ article.id }}/" class="btn btn-dark">Read</a>
                     </td>
                 </tr>
 
             {% endfor %}
             </tbody>
         </table>
-        <main>
-        {% for bodyText in bodyTexts %}
 
-            {% autoescape %}
-                {{ bodyText|raw }} {# var won't be escaped #}
-            {% endautoescape %}
+{#        {% for bodyText in bodyTexts %}#}
 
-            <hr>
-        {% endfor %}
-        </main>
+{#            {% autoescape %}#}
+{#                {{ bodyText|raw }} #}{# var won't be escaped #}
+{#            {% endautoescape %}#}
+
+{#            <hr>#}
+{#        {% endfor %}#}
+
     {% else %}
         
         

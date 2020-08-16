@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{ article.title}} {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+{% endblock %}
+{%  block body %}
+
+    {% autoescape %}
+        {{ article.body|raw }} {# var won't be escaped #}
+    {% endautoescape %}
+{% endblock %}

@@ -26,14 +26,10 @@
                 foreach ($glob2 as $html){
                     //get content of html file
                     $htmlContent = file_get_contents($html);
-                    $htmlforDB = htmlentities($htmlContent);
 
                     //get title of article
                     $crawler2 = new Crawler($htmlContent);
                     $crawler2 = $crawler2->filter('h2')->text();
-                    var_dump($crawler2);
-
-
 
                     //save to db
                    //$this->save($crawler2,$htmlContent);
@@ -51,12 +47,15 @@
 
               array_push($body, $article->getBody()) ;
             }
-            var_dump($body);
+            //var_dump($body);
             return $this->render('articles/index.html.twig', array('articles' =>$articles, 'bodyTexts'=> $body));
         }
 
         /**
          * @Route (path="/article/save", methods={"GET"})
+         * @param $title
+         * @param $html
+         * @return Response
          */
         public function save($title,$html){
             $entityManager = $this->getDoctrine()->getManager();
@@ -77,7 +76,9 @@
         }
 
         /**
-         * @Route (path="/article/id", methods={"GET"})
+         * @Route (path="/article/{id}/", methods={"GET"})
+         * @param $id
+         * @return Response
          */
         public function show($id){
             $article = $this->getDoctrine()->getRepository(Articles::class)->find($id);
